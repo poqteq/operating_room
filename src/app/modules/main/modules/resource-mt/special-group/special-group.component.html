@@ -1,0 +1,119 @@
+<page-header [title]="'特殊人群管理'"></page-header>
+<nz-card [nzBordered]="false">
+  <form nz-form [nzLayout]="'inline'" [formGroup]="formModel" (ngSubmit)="currentPage=1;searchInfo()" class="search__form">
+    <nz-row [nzGutter]="{ md: 8, lg: 24, xl: 48 }">
+      <nz-col nzMd="8" nzSm="24">
+        <nz-form-item>
+          <nz-form-label>社区</nz-form-label>
+          <nz-form-control>
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_community">
+              <nz-option *ngFor="let item of communityOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+      <nz-col nzMd="8" nzSm="24">
+        <nz-form-item>
+          <nz-form-label>网格</nz-form-label>
+          <nz-form-control>
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_grid">
+              <nz-option *ngFor="let item of gridOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+      <nz-col nzMd="8" nzSm="24">
+        <nz-form-item>
+          <nz-form-label>人群</nz-form-label>
+          <nz-form-control>
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_group">
+              <nz-option *ngFor="let item of groupOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+      <nz-col [nzSpan]="24" class="text-right">
+        <button nz-button type="submit" [nzType]="'primary'">
+          <i nz-icon type="loading" *ngIf="loading"></i>
+          <i nz-icon type="search" *ngIf="!loading"></i>
+          查询
+        </button>
+        <button nz-button type="button" (click)="resetInfo()" class="mx-sm">
+          <i nz-icon type="redo"></i>
+          重置
+        </button>
+      </nz-col>
+    </nz-row>
+  </form>
+</nz-card>
+<nz-card [nzBordered]="false">
+  <div class="it-group">
+    <nz-input-group nzSuffixIcon="anticon anticon-search" style="width: 270px;">
+      <input type="text" nz-input placeholder="回车搜索" [(ngModel)]="sInfo" name="sInfo">
+    </nz-input-group>
+  </div>
+  <div class="text-left">
+    <button nz-button type="submit" [nzType]="'primary'">
+      <i nz-icon type="loading" *ngIf="loading"></i>
+      <i nz-icon type="plus" theme="outline"></i>
+      新增
+    </button>
+    <button nz-button type="button" class="mx-sm">
+      <i nz-icon type="edit" theme="outline"></i>
+      编辑
+    </button>
+    <button nz-button type="button" class="mx-sm">
+      <i nz-icon type="delete" theme="outline"></i>
+      删除
+    </button>
+  </div>
+  <nz-table
+          #rowSelectionTable
+          [nzLoading] = "loading"
+          [nzData]="dataSet"
+          [nzShowPagination]="false">
+    <thead>
+    <tr>
+      <th nzWidth="70px" nzLeft="0px" nzShowCheckbox nzShowRowSelection [nzSelections]="listOfSelection"
+          [(nzChecked)]="allChecked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="checkAll($event)">
+      </th>
+      <th>编号</th>
+      <th>姓名</th>
+      <th>户籍地址</th>
+      <th>性别</th>
+      <th>婚姻状况</th>
+      <th>身份证号</th>
+      <th>工作单位</th>
+      <th>手机号</th>
+      <th>所属社区</th>
+      <th>房号</th>
+      <th>照片</th>
+      <th>标签</th>
+      <th>备注</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of dataSet">
+      <td nzWidth="70px" nzLeft="0px"  nzShowCheckbox [(nzChecked)]="data.checked" (nzCheckedChange)="refreshStatus()"></td>
+      <td>{{data.bh}}</td>
+      <td>{{data.xm}}</td>
+      <td>{{data.hjdz}}</td>
+      <td>{{data.xb}}</td>
+      <td>{{data.hyzk}}</td>
+      <td>{{data.sfzh}}</td>
+      <td>{{data.gzdw}}</td>
+      <td>{{data.sjh}}</td>
+      <td>{{data.sssq}}</td>
+      <td>{{data.fh}}</td>
+      <td>{{data.zp}}</td>
+      <td>{{data.bq}}</td>
+      <td>{{data.bz}}</td>
+    </tr>
+    </tbody>
+  </nz-table>
+  <div *ngIf="rowSelectionTable.data.length > 0" class="paging">
+    <p>共 {{totalAmount}} 条</p>
+    <div class="flex1"></div>
+    <nz-pagination [nzPageIndex]="currentPage" [nzPageSize]="perPage" (nzPageSizeChange)="pageSizeChange($event)" (nzPageIndexChange)="pageIndexChange($event)"  nzShowSizeChanger [nzTotal]="totalAmount"></nz-pagination>
+  </div>
+</nz-card>

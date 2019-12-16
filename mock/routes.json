@@ -1,0 +1,5 @@
+{
+    "/auth/login": "/login",
+    "/api/logout": "/logout",
+    "/api/auth": "/auth_data"
+}

@@ -1,0 +1,13 @@
+<div class="wrapper d-flex align-content-between">
+    <div class="router-progress-bar" *ngIf="isFetching"></div>
+    <fun-header [type]="'light'"></fun-header>
+    <div class="content d-flex m0">
+        
+            <ng-content></ng-content>
+        
+    </div>
+
+    <layout-footer></layout-footer>
+
+
+</div>

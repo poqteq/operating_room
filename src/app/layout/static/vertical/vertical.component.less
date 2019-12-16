@@ -1,0 +1,19 @@
+@import '../../../../styles/default';
+:host {
+    .wrapper {
+        flex-direction: column; 
+     }
+    .content {
+        flex: 1;
+        -webkit-transform: translate3d(0px, 0, 0); 
+        transform: translate3d(0px, 0, 0); 
+    }
+    ::ng-deep {
+        .header {
+            position:relative;
+        }
+        .subcontainer {
+            position:static !important;
+        }
+    }
+}

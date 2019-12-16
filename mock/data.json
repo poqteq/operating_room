@@ -1,0 +1,73 @@
+{
+    "login": {
+      "login_status": "success"
+    },
+    "logout": {
+      "logout_status": "success"
+    },
+    "app": {
+      "name": "F-UI",
+      "description": "Ng-zorro admin panel front-end framework"
+    },
+    "auth_data": {
+      "user": {
+        "name": "Admin",
+        "avatar": "./assets/_/img/avatar.jpg",
+        "email": "f-ui@int-yt.com",
+        "username": "test"
+      },
+      "resources": {},
+      "menu": [
+        {
+          "text": "主导航",
+          
+          "group": true,
+          "hideInBreadcrumb": true,
+          "children": [
+            {
+              "text": "仪表盘",
+             
+              "icon": "anticon anticon-dashboard",
+              "children": [
+                {
+                  "text": "默认页",
+                  "link": "/app/dashboard/v1"
+                },
+                {
+                  "text": "分析页",
+                  "link": "/app/dashboard/analysis"
+                },
+                {
+                  "text": "监控页",
+                  "link": "/app/dashboard/monitor"
+                 
+                },
+                {
+                  "text": "工作台",
+                  "link": "/app/dashboard/workplace"
+                }
+              ]
+            },
+            {
+              "text": "快捷菜单",
+             
+              "icon": "anticon anticon-rocket",
+              "shortcut_root": true,
+              "children": []
+            },
+            {
+              "text": "小部件",
+              
+              "link": "/app/widgets",
+              "icon": "anticon anticon-appstore",
+              "badge": 2
+            }
+          ]
+        }
+      ]
+  
+  
+      
+    }
+  
+  }

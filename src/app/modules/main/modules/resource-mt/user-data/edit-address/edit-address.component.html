@@ -1,0 +1,59 @@
+<nz-modal nzWidth="600" [(nzVisible)]="isVisible" [nzTitle]="title" (nzOnCancel)="handleCancel()" [nzFooter]="modalImportFooter">
+    <form nz-form [formGroup]='menuForm' class="modalForm">
+      <nz-row>
+        <nz-form-item>
+          <nz-form-label nzXs='5' nzRequired>省</nz-form-label>
+          <nz-form-control nzXs='18'>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_province">
+                <nz-option *ngFor="let item of provinceOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzXs='5' nzRequired>市</nz-form-label>
+          <nz-form-control nzXs='18'>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_city">
+                <nz-option *ngFor="let item of cityOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzXs='5' nzRequired>区/县</nz-form-label>
+          <nz-form-control nzXs='18'>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_area">
+                <nz-option *ngFor="let item of areaOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzXs='5'>办事处/街道</nz-form-label>
+          <nz-form-control nzXs='18'>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_street">
+                <nz-option *ngFor="let item of streetOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzXs='5'>社区/村</nz-form-label>
+          <nz-form-control nzXs='18'>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_village">
+                <nz-option *ngFor="let item of villageOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzXs='5'>小区/街路巷</nz-form-label>
+          <nz-form-control nzXs='18'>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择" formControlName="form_road">
+                <nz-option *ngFor="let item of roadOption" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-row>
+    </form>
+    <ng-template #modalImportFooter>
+      <button nz-button nzType="default" (click)="handleCancel()">取消</button>
+      <button nz-button nzType="primary" (click)="handleOK()" [nzLoading]="uploading" [disabled]='!menuForm.valid'>确定</button>
+    </ng-template>
+  </nz-modal>
+    

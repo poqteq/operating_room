@@ -1,0 +1,234 @@
+{
+    "app": {
+        "name": "姚家街道办事处",
+        "description": "Ng-zorro admin panel front-end framework"
+     },
+      "user": {
+        "name": "Admin",
+        "avatar": "./assets/_/img/avatar.jpg",
+        "email": "f-ui@int-yt.com",
+        "username": "test"
+      },
+      "resources": {
+      },
+      "menus": [
+        {
+            "text": "主导航",
+            
+            "group": true,
+            "hideInBreadcrumb": true,
+           
+            "children": [
+              {
+                "text": "仪表盘",
+               
+                "icon": "anticon anticon-dashboard",
+                "children": [
+                  {
+                    "text": "默认页",
+                    "link": "/app/dashboard/v1"
+                  },
+                  {
+                    "text": "分析页",
+                    "link": "/app/dashboard/analysis"
+                  },
+                  {
+                    "text": "监控页",
+                    "link": "/app/dashboard/monitor"
+                   
+                  },
+                  {
+                    "text": "工作台",
+                    "link": "/app/dashboard/workplace"
+                  }
+                ]
+              },
+              {
+                "text": "快捷菜单",
+               
+                "icon": "anticon anticon-rocket",
+                "shortcut_root": true,
+                "hide": true,
+                "children": []
+              },
+              {
+                "text": "小部件",
+                
+                "link": "/app/widgets",
+                "icon": "anticon anticon-appstore",
+                "badge": 2
+              },
+              {
+                "text": "样式",
+                
+                "icon": "anticon anticon-info",
+                "children": [
+                  {
+                    "text": "字体排印",
+                    "link": "/app/style/typography",
+                   
+                    "shortcut": true
+                  },
+                  {
+                    "text": "瀑布流",
+                    "link": "/app/style/gridmasonry"
+                    
+                  },
+                 
+                  {
+                    "text": "颜色",
+                    "link": "/app/style/colors"
+                    
+                  }
+                ]
+              },
+              {
+                "text": "布局",
+                
+               
+                "icon": "anticon anticon-layout",
+                "children": [
+                    {
+                      "text": "上中下布局",
+                      "link": "/app/layout/static/lay1",
+                     
+                      "shortcut": true
+                    }
+                ]
+                
+              },
+              {
+                "text": "表单页",
+             
+                "link": "/app/pro/form",
+                "icon": "anticon anticon-edit",
+                "hideInBreadcrumb": true,
+                "children": [
+                  {
+                    "text": "基础表单",
+                    "link": "/app/pro/form/basic-form",
+                   
+                    "shortcut": true
+                  },
+                  {
+                    "text": "分布表单",
+                    "link": "/app/pro/form/step-form"
+                   
+                  },
+                  {
+                    "text": "高级表单",
+                    "link": "/app/pro/form/advanced-form"
+                   
+                  }
+                ]
+              },
+              {
+                "text": "列表",
+               
+                "icon": "anticon anticon-appstore-o",
+                "hideInBreadcrumb": true,
+                "children": [
+                  {
+                    "text": "查询表格",
+                    "link": "/app/pro/list/table-list",
+                   
+                    "shortcut": true
+                  },
+                  {
+                    "text": "标准列表",
+                    "link": "/app/pro/list/basic-list"
+                   
+                  },
+                  {
+                    "text": "卡片列表",
+                    "link": "/app/pro/list/card-list"
+                   
+                  },
+                  {
+                    "text": "搜索列表",
+                    
+                    "children": [
+                      {
+                        "link": "/app/pro/list/articles",
+                        "text": "搜索列表（文章）"
+                      },
+                      {
+                        "link": "/app/pro/list/projects",
+                        "text": "搜索列表（项目）",
+                        "shortcut": true
+                      },
+                      {
+                        "link": "/app/pro/list/applications",
+                        "text": "搜索列表（应用）"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "text": "详情页",
+               
+                "icon": "anticon anticon-profile",
+                "hideInBreadcrumb": true,
+                "children": [
+                  {
+                    "text": "基础详情页",
+                    "link": "/app/pro/profile/basic"
+                    
+                  },
+                  {
+                    "text": "高级详情页",
+                    "link": "/app/pro/profile/advanced",
+                   
+                    "shortcut": true
+                  }
+                ]
+              },
+              {
+                "text": "结果页",
+                
+                "icon": "anticon anticon-check-circle-o",
+                "hideInBreadcrumb": true,
+                "children": [
+                  {
+                    "text": "成功",
+                    "link": "/app/pro/result/success"
+                    
+                  },
+                  {
+                    "text": "失败",
+                    "link": "/app/pro/result/fail"
+                  
+                  }
+                ]
+              },
+              {
+                "text": "异常",
+               
+                "link": "/",
+                "icon": "anticon anticon-exception",
+                "children": [
+                  {
+                    "text": "403",
+                    "link": "/app/exception/403",
+                    "reuse": false
+                  },
+                  {
+                    "text": "404",
+                    "link": "/app/exception/404",
+                    "reuse": false
+                  },
+                  {
+                    "text": "500",
+                    "link": "/app/exception/500",
+                    "reuse": false
+                  }
+                ]
+              }
+              
+            ]
+          }
+      ]
+    }
+  
+  

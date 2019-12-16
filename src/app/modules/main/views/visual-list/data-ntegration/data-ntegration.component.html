@@ -1,0 +1,88 @@
+<div class="wrapper d-flex align-content-between">
+    <div>
+        <div class="header " style="">
+
+            <div class="top-nav-wrap">
+                <ul class="top-nav">
+
+                </ul>
+                <div class="title">社会精细化治理数据集成平台</div>
+                <ul class="top-nav">
+
+
+                    <li class="hidden-xs">
+                        <header-user></header-user>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content d-flex m0">
+        <div class="d-block width-100 ">
+            <nz-card>
+                <form nz-form [nzLayout]="'inline'">
+                    <nz-row [nzGutter]="{ md: 8, lg: 24, xl: 48 }">
+                        <nz-col nzMd="6" nzSm="24">
+                            <nz-form-item class="d-block">
+                                <nz-form-control class="d-block">
+                                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择地区" style="width:100%"
+                                        [(ngModel)]="selectedValue" 
+                                        [ngModelOptions]="{standalone: true}" 
+                                        (ngModelChange)="areaChange($event)">
+                                        <nz-option *ngFor="let item of selectList" 
+                                        [nzLabel]="item.name" [nzValue]="item.code"></nz-option>
+                                      
+                                    </nz-select>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </nz-col>
+                    </nz-row>
+                </form>
+
+            </nz-card>
+            <div nz-row [nzGutter]="16" class="mt-md mr-md ml-md">
+                <div nz-col nzXs="24" nzSm="24" nzMd="6">
+                    <nz-card nzTitle="Card title" [nzExtra]="extraTemplate">
+                        <p>Card content</p>
+                        <p>Card content</p>
+                        <p>Card content</p>
+                    </nz-card>
+                    <ng-template #extraTemplate>
+                        <a>More</a>
+                    </ng-template>
+                    <nz-card nzTitle="Card title" [nzExtra]="extraTemplate">
+                        <p>Card content</p>
+                        <p>Card content</p>
+                        <p>Card content</p>
+                    </nz-card>
+                </div>
+                <div nz-col nzXs="24" nzSm="24" nzMd="12">
+                    <nz-card >
+                        <div id="containerMap" #containerMap></div>
+                    </nz-card>
+                </div>
+                <div nz-col nzXs="24" nzSm="24" nzMd="6">
+                    <nz-card nzTitle="Card title" [nzExtra]="extraTemplate">
+                        <p>Card content</p>
+                        <p>Card content</p>
+                        <p>Card content</p>
+                    </nz-card>
+                    <ng-template #extraTemplate>
+                        <a>More</a>
+                    </ng-template>
+                    <nz-card nzTitle="Card title" [nzExtra]="extraTemplate">
+                        <p>Card content</p>
+                        <p>Card content</p>
+                        <p>Card content</p>
+                    </nz-card>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <layout-footer></layout-footer> -->
+
+
+</div>
