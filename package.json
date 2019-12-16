@@ -78,7 +78,7 @@
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.14.0",
     "typescript": "~3.1.1",
-    "webpack-bundle-analyzer": "^2.11.2"
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "lint-staged": {
     "*.{cmd,html,json,md,sh,txt,xml,yml}": [
