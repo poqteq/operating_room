@@ -39,7 +39,7 @@
     "mockjs": "^1.0.1-beta3",
     "prettier": "^1.14.2",
     "rxjs": "~6.3.3",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
